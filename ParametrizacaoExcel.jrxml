@@ -232,7 +232,7 @@
 		</band>
 	</title>
 	<detail>
-		<band height="32" splitType="Stretch">
+		<band height="109" splitType="Stretch">
 			<textField>
 				<reportElement x="519" y="0" width="80" height="32" uuid="a428a430-c606-4278-8840-8ce4c5682624"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
@@ -316,6 +316,21 @@
 					<font fontName="SansSerif" size="8"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{situacao} == "A" ? "Aguardando Validação" : $F{situacao} == "V" ? "Validado" : "Encerrado";]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="280" y="40" width="180" height="32" uuid="10b66873-6064-458a-bd84-8711112fe583"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[( $F{situacao} != null && $F{situacao}.equals("A") ? "Aguardando Validação" :
+( $F{situacao} != null  && $F{situacao}.equals("V") ? "Validado" :( "Encerrado" )))]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="638" y="40" width="62" height="32" uuid="4f3ad7db-cea5-4f0d-b308-cf1acc966601"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{situacao}]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>
