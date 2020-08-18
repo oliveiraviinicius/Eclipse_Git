@@ -27,7 +27,7 @@
 	<field name="nomeGestorInstitucional" class="java.lang.String"/>
 	<field name="siglaGestorTecnico" class="java.lang.String"/>
 	<field name="nomeGestorTecnico" class="java.lang.String"/>
-	<field name="idEntidade" class="java.lang.String"/>
+	<field name="idEntidade" class="java.lang.Long"/>
 	<field name="nomeEntidade" class="java.lang.String"/>
 	<field name="diaLimiteAtesta" class="java.lang.Integer"/>
 	<field name="dataInicio" class="java.util.Date"/>
@@ -51,7 +51,7 @@
 				<textFieldExpression><![CDATA[$P{TITULO}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="690" y="0" width="112" height="50" uuid="024e33b6-c440-4410-a8e1-f8cb1509d51e"/>
+				<reportElement x="690" y="0" width="151" height="50" uuid="024e33b6-c440-4410-a8e1-f8cb1509d51e"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
@@ -242,7 +242,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="SansSerif" size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{idEntidade} + " - " + $F{nomeEntidade}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{idEntidade} != null ? $F{idEntidade}.toString() : "" + " - " + $F{nomeEntidade}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
 				<reportElement x="0" y="0" width="39" height="32" uuid="e91f3790-dae3-407f-94b7-44507a840c44"/>
@@ -305,7 +305,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="SansSerif" size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{idSistema} + " - " + $F{siglaSistema}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{idSistema} != null ? $F{idSistema}.toString() : "" + " - " + $F{siglaSistema}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="699" y="0" width="80" height="32" uuid="1aacb639-3ad8-4f87-92a4-084184ec9517"/>
