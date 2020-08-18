@@ -79,7 +79,7 @@
 				<text><![CDATA[Entidade]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Opaque" x="271" y="50" width="79" height="30" backcolor="#D9D9D9" uuid="795c94d7-1fda-4507-a1ac-1b61d0e3732b"/>
+				<reportElement mode="Opaque" x="259" y="50" width="91" height="30" backcolor="#D9D9D9" uuid="795c94d7-1fda-4507-a1ac-1b61d0e3732b"/>
 				<box>
 					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
@@ -148,7 +148,7 @@
 				<text><![CDATA[Gestor Institucional]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Opaque" x="191" y="50" width="80" height="30" backcolor="#D9D9D9" uuid="2b27ae5e-0caf-4a86-a731-3e50c379f707">
+				<reportElement mode="Opaque" x="191" y="50" width="68" height="30" backcolor="#D9D9D9" uuid="2b27ae5e-0caf-4a86-a731-3e50c379f707">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 				</reportElement>
 				<box>
@@ -291,7 +291,7 @@
 				<textFieldExpression><![CDATA[$F{nomeItem}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
-				<reportElement x="191" y="0" width="80" height="32" uuid="0cbffb21-1074-4460-8a6e-725f32714c68"/>
+				<reportElement x="191" y="0" width="68" height="32" uuid="0cbffb21-1074-4460-8a6e-725f32714c68"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="SansSerif" size="8"/>
 				</textElement>
@@ -305,7 +305,7 @@
 				<textFieldExpression><![CDATA[$F{diaLimiteAtesta}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="271" y="0" width="79" height="32" uuid="4cb2ed7b-e290-4310-b567-aa5ade7b9eb6"/>
+				<reportElement x="259" y="0" width="91" height="32" uuid="4cb2ed7b-e290-4310-b567-aa5ade7b9eb6"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="SansSerif" size="8"/>
 				</textElement>
@@ -339,7 +339,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="SansSerif" size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{idSistema} != null ? $F{idSistema}.toString() : "" + " - " + $F{siglaSistema}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{idSistema} != null ? $F{idSistema}.toString() + " - " + $F{siglaSistema} : "" ]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="833" y="0" width="107" height="32" uuid="1aacb639-3ad8-4f87-92a4-084184ec9517"/>
