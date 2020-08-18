@@ -315,7 +315,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="SansSerif" size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{periodicidade} == "A" ? "Aguardando Validação" : $F{periodicidade} == "V" ? "Validado" : "Encerrado";]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{situacao} == "A" ? "Aguardando Validação" : $F{situacao} == "V" ? "Validado" : "Encerrado";]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>
