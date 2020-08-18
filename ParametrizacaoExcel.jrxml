@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.10.0.final using JasperReports Library version 6.2.0  -->
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ParametrizacaoExcel" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="842" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="efcdd2a6-ae98-4834-a6d7-ebe28674f819">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ParametrizacaoExcel" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="842" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" isIgnorePagination="true" uuid="efcdd2a6-ae98-4834-a6d7-ebe28674f819">
 	<property name="com.jaspersoft.studio.unit." value="pixel"/>
 	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
 	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
@@ -232,7 +232,7 @@
 		</band>
 	</title>
 	<detail>
-		<band height="109" splitType="Stretch">
+		<band height="32" splitType="Stretch">
 			<textField>
 				<reportElement x="519" y="0" width="80" height="32" uuid="a428a430-c606-4278-8840-8ce4c5682624"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
@@ -280,7 +280,9 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="SansSerif" size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{periodicidade} == "A" ? "Anual" : $F{periodicidade} == "M" ? "Mensal" : $F{periodicidade} == "S" ? "Semestral" : "Trimestral";]]></textFieldExpression>
+				<textFieldExpression><![CDATA[( $F{periodicidade} != null && $F{periodicidade}.equals("A") ? "Anual" :
+( $F{periodicidade} != null  && $F{periodicidade}.equals("M") ? "Mensal" :
+( $F{periodicidade} != null  && $F{periodicidade}.equals("S") ? "Semestral" : ( "Trimestral" ))));]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="359" y="0" width="80" height="32" uuid="056b6561-d5b2-42b1-b2df-57ec8b2a4a3c"/>
@@ -304,33 +306,19 @@
 				<textFieldExpression><![CDATA[$F{idSistema} != null ? $F{idSistema}.toString() : "" + " - " + $F{siglaSistema}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="699" y="0" width="80" height="32" uuid="1aacb639-3ad8-4f87-92a4-084184ec9517"/>
+				<reportElement x="699" y="0" width="79" height="32" uuid="1aacb639-3ad8-4f87-92a4-084184ec9517"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="SansSerif" size="8"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{produto}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="779" y="0" width="62" height="32" uuid="4c1be928-ae9a-4cb1-a431-997e9f7d9e78"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="SansSerif" size="8"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{situacao} == "A" ? "Aguardando Validação" : $F{situacao} == "V" ? "Validado" : "Encerrado";]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="280" y="40" width="180" height="32" uuid="10b66873-6064-458a-bd84-8711112fe583"/>
+				<reportElement x="778" y="0" width="63" height="32" uuid="10b66873-6064-458a-bd84-8711112fe583"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="SansSerif" size="8"/>
 				</textElement>
 				<textFieldExpression><![CDATA[( $F{situacao} != null && $F{situacao}.equals("A") ? "Aguardando Validação" :
 ( $F{situacao} != null  && $F{situacao}.equals("V") ? "Validado" :( "Encerrado" )))]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="638" y="40" width="62" height="32" uuid="4f3ad7db-cea5-4f0d-b308-cf1acc966601"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="SansSerif" size="8"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{situacao}]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>
