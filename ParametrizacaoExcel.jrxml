@@ -35,7 +35,7 @@
 				<imageExpression><![CDATA[$P{IMAGEM_LOGO}]]></imageExpression>
 			</image>
 			<textField>
-				<reportElement x="191" y="0" width="498" height="50" uuid="a4b435fb-a633-43f1-9b75-e661daa8c361"/>
+				<reportElement x="191" y="0" width="859" height="50" uuid="a4b435fb-a633-43f1-9b75-e661daa8c361"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="SansSerif" size="14" isBold="true"/>
 				</textElement>
@@ -268,7 +268,7 @@
 		</band>
 	</title>
 	<detail>
-		<band height="85" splitType="Stretch">
+		<band height="32" splitType="Stretch">
 			<textField>
 				<reportElement x="590" y="0" width="80" height="32" uuid="a428a430-c606-4278-8840-8ce4c5682624"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
