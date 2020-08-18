@@ -18,17 +18,22 @@
 	<queryString>
 		<![CDATA[]]>
 	</queryString>
+	<field name="id" class="java.lang.Long"/>
 	<field name="nomeItem" class="java.lang.String"/>
-	<field name="unidadeInstitucional.pk.numero" class="java.lang.Long"/>
-	<field name="unidadeTecnico.sgUnidade" class="java.lang.String"/>
-	<field name="unidadeInstitucional.sgUnidade" class="java.lang.String"/>
-	<field name="unidadeTecnico.pk.numero" class="java.lang.Long"/>
+	<field name="descricao" class="java.lang.String"/>
 	<field name="tipoParametrizacao" class="java.lang.String"/>
+	<field name="periodicidade" class="java.lang.String"/>
+	<field name="siglaGestorInstitucional" class="java.lang.String"/>
+	<field name="nomeGestorInstitucional" class="java.lang.String"/>
+	<field name="siglaGestorTecnico" class="java.lang.String"/>
+	<field name="nomeGestorTecnico" class="java.lang.String"/>
+	<field name="idEntidade" class="java.lang.Long"/>
+	<field name="nomeEntidade" class="java.lang.String"/>
+	<field name="diaLimiteAtesta" class="java.lang.Integer"/>
 	<field name="dataInicio" class="java.util.Date"/>
 	<field name="dataFim" class="java.util.Date"/>
-	<field name="diaLimiteAtesta" class="java.lang.Integer"/>
-	<field name="sistema" class="java.lang.Long"/>
-	<field name="nomeSistema" class="java.lang.String"/>
+	<field name="idSistema" class="java.lang.Long"/>
+	<field name="siglaSistema" class="java.lang.String"/>
 	<field name="situacao" class="java.lang.String"/>
 	<background>
 		<band splitType="Stretch"/>
@@ -70,14 +75,12 @@
 				<textElement textAlignment="Left" verticalAlignment="Middle">
 					<font size="10" isBold="true"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{unidadeInstitucional.sgUnidade}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
 				<reportElement x="0" y="0" width="150" height="30" uuid="8850ff83-38e0-4f7b-a9a0-93ac66510085"/>
 				<textElement textAlignment="Left" verticalAlignment="Middle">
 					<font size="10" isBold="true"/>
 				</textElement>
-				<textFieldExpression><![CDATA["Gestor Institucional: " + $F{unidadeInstitucional.pk.numero}]]></textFieldExpression>
 			</textField>
 		</band>
 	</pageHeader>
@@ -187,14 +190,14 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{nomeSistema}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{siglaSistema}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
 				<reportElement x="0" y="0" width="50" height="32" uuid="3a553a21-9f6f-4e7a-85b2-72368eda2f7b"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle" markup="html">
 					<font size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{sistema}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{idSistema}]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>
